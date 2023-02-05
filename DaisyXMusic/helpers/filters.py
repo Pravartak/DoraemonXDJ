@@ -4,9 +4,10 @@ from pyrogram import filters
 
 from DaisyXMusic.config import COMMAND_PREFIXES
 
-other_filters = filters.group & ~filters.edited & ~filters.via_bot & ~filters.forwarded
+@Client.on_edited_message()
+other_filters = filters.group & ~filters.via_bot & ~filters.forwarded
 other_filters2 = (
-    filters.private & ~filters.edited & ~filters.via_bot & ~filters.forwarded
+    filters.private & ~filters.via_bot & ~filters.forwarded
 )
 
 
